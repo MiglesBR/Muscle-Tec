@@ -155,7 +155,7 @@ namespace Projeto_Muscle_Tec
             }
         }
 
-        private void AtualizarTreeView()
+        private void AtualizarTreeView() //Arrumar problema referente ao idAluno
         {
             // Recarrega os treinos e exercícios do banco de dados
             var listaTreinos = new Dictionary<int, (string nome, string descricao, Dictionary<string, int> exercicios)>();

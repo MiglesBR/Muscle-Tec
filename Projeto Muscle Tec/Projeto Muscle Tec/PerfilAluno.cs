@@ -19,82 +19,73 @@ namespace Projeto_Muscle_Tec
             CarregarPerfil();
         }
 
-        // Carregar os dados do aluno no formulário
+        // Carregar os dados do aluno e do usuário no formulário
         private void CarregarPerfil()
         {
             try
             {
+                // Query para pegar os dados do aluno e do usuário
                 string query = @"
-                    SELECT u.nome, a.peso, a.altura, a.meta, a.sessoes
+                    SELECT u.nome, u.email, u.senha, u.cpf, 
+                           a.peso, a.altura, a.meta, a.sessoes
                     FROM aluno a
                     INNER JOIN usuario u ON a.idUsuario = u.idUsuario
                     WHERE a.idAluno = @idAluno";
 
-                MySqlCommand cmd = new MySqlCommand(query, conexao);
-                cmd.Parameters.AddWithValue("@idAluno", idAluno);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                 {
-                    // Carregar dados no formulário
-                    txtNome.Text = reader["nome"].ToString();
-                    txtPeso.Text = reader["peso"].ToString();
-                    txtAltura.Text = reader["altura"].ToString();
-                    txtMeta.Text = reader["meta"].ToString();
-                    txtSessoes.Text = reader["sessoes"].ToString();
+                    cmd.Parameters.AddWithValue("@idAluno", idAluno);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Carregar dados do usuário
+                        txtNome.Text = reader["nome"].ToString();
+                        txtEmail.Text = reader["email"].ToString();
+                        txtSenha.Text = reader["senha"].ToString();
+                        txtCpf.Text = reader["cpf"].ToString();
+
+                        // Carregar dados do aluno
+                        txtPeso.Text = reader["peso"].ToString();
+                        txtAltura.Text = reader["altura"].ToString();
+                        txtMeta.Text = reader["meta"].ToString();
+                        txtSessoes.Text = reader["sessoes"].ToString();
+                    }
+                    reader.Close();
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar o perfil: {ex.Message}");
             }
         }
-        public static class ConexaoDB
-        {
-            private static MySqlConnection conexao;
 
-            public static MySqlConnection GetConexao()
-            {
-                if (conexao == null)
-                {
-                    string servidor = "localhost";
-                    string banco = "muscletec";
-                    string usuario = "root";
-                    string senha = "";
-
-                    string stringConexao = $"SERVER={servidor}; DATABASE={banco}; UID={usuario}; PASSWORD={senha};";
-                    conexao = new MySqlConnection(stringConexao);
-                    conexao.Open();
-                }
-
-                return conexao;
-            }
-        }
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                // Atualiza o nome na tabela 'usuario'
-                string queryAtualizarNome = @"
-            UPDATE usuario 
-            SET nome = @novoNome 
-            WHERE idUsuario = (SELECT idUsuario FROM aluno WHERE idAluno = @idAluno)";
+                // Atualiza os dados na tabela 'usuario'
+                string queryAtualizarUsuario = @"
+                    UPDATE usuario 
+                    SET nome = @novoNome, email = @novoEmail, senha = @novaSenha, cpf = @novoCpf
+                    WHERE idUsuario = (SELECT idUsuario FROM aluno WHERE idAluno = @idAluno)";
 
-                using (MySqlCommand cmd = new MySqlCommand(queryAtualizarNome, conexao))
+                using (MySqlCommand cmd = new MySqlCommand(queryAtualizarUsuario, conexao))
                 {
-                    cmd.Parameters.AddWithValue("@novoNome", txtNome.Text); // txtNome é o TextBox onde o usuário digita o novo nome
+                    cmd.Parameters.AddWithValue("@novoNome", txtNome.Text);
+                    cmd.Parameters.AddWithValue("@novoEmail", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@novaSenha", txtSenha.Text);
+                    cmd.Parameters.AddWithValue("@novoCpf", txtCpf.Text);
                     cmd.Parameters.AddWithValue("@idAluno", idAluno);
 
                     cmd.ExecuteNonQuery();
                 }
 
-                // Atualiza os dados na tabela 'aluno' (peso, altura, meta, sessões)
+                // Atualiza os dados na tabela 'aluno'
                 string queryAtualizarAluno = @"
-            UPDATE aluno 
-            SET peso = @peso, altura = @altura, meta = @meta, sessoes = @sessoes
-            WHERE idAluno = @idAluno";
+                    UPDATE aluno 
+                    SET peso = @peso, altura = @altura, meta = @meta, sessoes = @sessoes
+                    WHERE idAluno = @idAluno";
 
                 using (MySqlCommand cmd = new MySqlCommand(queryAtualizarAluno, conexao))
                 {
@@ -108,9 +99,7 @@ namespace Projeto_Muscle_Tec
                 }
 
                 MessageBox.Show("Dados atualizados com sucesso!");
-
-                // Fechar a tela de perfil e reabrir a tela de treinos com as informações atualizadas
-                this.Close();
+                this.Close(); // Fecha a tela após salvar os dados
             }
             catch (Exception ex)
             {
