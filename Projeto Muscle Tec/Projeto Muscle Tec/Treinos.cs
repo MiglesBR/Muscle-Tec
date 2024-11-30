@@ -19,8 +19,6 @@ namespace Projeto_Muscle_Tec
             CarregarTreinos();
             AdicionarBotaoExercicios();
             dataGridView1.CellClick += dgvTreinos_CellClick;
-            
-
         }
 
         public static class ConexaoDB
@@ -49,9 +47,9 @@ namespace Projeto_Muscle_Tec
         {
             try
             {
-                // Cria a conexão com o banco
-
-                using (MySqlConnection conexao = new MySqlConnection("SERVER={servidor}; DATABASE={banco}; UID={usuario}; PASSWORD={senha};"))
+                // String de conexão válida
+                string connectionString = "SERVER=localhost; DATABASE=muscletec; UID=root; PASSWORD=;";
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
 
@@ -72,7 +70,6 @@ namespace Projeto_Muscle_Tec
                     dataGridView1.Columns["idTreino"].HeaderText = "ID do Treino";
                     dataGridView1.Columns["nomeTreino"].HeaderText = "Nome do Treino";
                     dataGridView1.Columns["descricao"].HeaderText = "Descrição";
-                    dataGridView1.Columns["Aluno"].HeaderText = "Nome do Aluno";
                 }
             }
             catch (Exception ex)
@@ -80,6 +77,7 @@ namespace Projeto_Muscle_Tec
                 MessageBox.Show($"Erro ao carregar os treinos: {ex.Message}");
             }
         }
+
 
         ///////////
 
@@ -104,37 +102,42 @@ namespace Projeto_Muscle_Tec
 
         private void dgvTreinos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Acoes"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["btnExercicios"].Index && e.RowIndex >= 0)
             {
                 int idTreino = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idTreino"].Value);
                 MostrarExercicios(idTreino);
             }
         }
 
+
         //////////
 
         private void MostrarExercicios(int idTreino)
         {
-            string connectionString = "sua_conexao_aqui";
             string query = @"
-    SELECT nomeExercicio, descricao 
-    FROM exercicios
-    INNER JOIN treino_exercicio ON exercicios.idExercicio = treino_exercicio.idExercicio
-    WHERE treino_exercicio.idTreino = @idTreino";
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    SELECT nomeExercicio, descricao 
+                    FROM exercicios
+                    INNER JOIN treino_exercicio ON exercicios.idExercicio = treino_exercicio.idExercicio
+                    WHERE treino_exercicio.idTreino = @idTreino";
+            try
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idTreino", idTreino);
+                using (MySqlConnection conn = ConexaoDB.GetConexao()) // Obtém a conexão com a classe ConexaoDB
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idTreino", idTreino);
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                // Exibe os dados no mesmo DataGridView ou em outro formulário
-                ExerciciosAluno ExerciciosAluno = new ExerciciosAluno(dt);
-                ExerciciosAluno.Show();
+                    // Exibe os dados no mesmo DataGridView ou em outro formulário
+                    ExerciciosAluno exerciciosAluno = new ExerciciosAluno(dt);
+                    exerciciosAluno.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar os exercícios: {ex.Message}");
             }
         }
 

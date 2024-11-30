@@ -42,6 +42,8 @@ namespace Projeto_Muscle_Tec
 
         private void ConfigurarDataGridView()
         {
+            // Certifique-se de que o evento seja registrado apenas uma vez
+            dataGridView1.CellContentClick -= dataGridViewAlunos_CellContentClick; // Remove se já registrado
             dataGridView1.CellContentClick += dataGridViewAlunos_CellContentClick;
 
             // Configuração do DataGridView
@@ -50,7 +52,7 @@ namespace Projeto_Muscle_Tec
             dataGridView1.Columns.Clear();
             dataGridView1.AutoGenerateColumns = false;
 
-            // Coluna para exibir o nome do aluno
+            // Coluna Nome
             var colunaNome = new DataGridViewTextBoxColumn
             {
                 HeaderText = "Nome",
@@ -58,7 +60,7 @@ namespace Projeto_Muscle_Tec
             };
             dataGridView1.Columns.Add(colunaNome);
 
-            // Coluna para o botão "Treino"
+            // Coluna Treino
             var colunaTreino = new DataGridViewButtonColumn
             {
                 HeaderText = "Treino",
@@ -68,7 +70,7 @@ namespace Projeto_Muscle_Tec
             };
             dataGridView1.Columns.Add(colunaTreino);
 
-            // Coluna para o botão "Informações"
+            // Coluna Informações
             var colunaInformacoes = new DataGridViewButtonColumn
             {
                 HeaderText = "Informações",
@@ -77,10 +79,8 @@ namespace Projeto_Muscle_Tec
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
             dataGridView1.Columns.Add(colunaInformacoes);
-
-            // *** REMOVIDO *** Linha de registro duplicada do evento CellContentClick
-            // dataGridView1.CellContentClick += dataGridViewAlunos_CellContentClick;
         }
+
 
 
         private void CarregarAlunos(string pesquisa)
@@ -156,8 +156,6 @@ namespace Projeto_Muscle_Tec
                 }
             }
         }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
