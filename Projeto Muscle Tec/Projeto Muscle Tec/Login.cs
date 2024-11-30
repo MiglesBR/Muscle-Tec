@@ -18,9 +18,7 @@ namespace Projeto_Muscle_Tec
         {
             InitializeComponent();
             ConectarBanco();
-           
         }
-
         private void ConectarBanco()
         {
             string servidor = "localhost"; // ou o IP do seu servidor MySQL
@@ -74,7 +72,13 @@ namespace Projeto_Muscle_Tec
         {
             try
             {
-                string query = "SELECT idUsuario FROM usuario WHERE email = @eemail AND tipo = 'Aluno'";
+                // Consulta para obter o idAluno com base no email do usuário
+                string query = @"
+                    SELECT a.idAluno 
+                    FROM aluno a
+                    INNER JOIN usuario u ON a.idUsuario = u.idUsuario
+                    WHERE u.email = @eemail";
+
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@eemail", email);
 
@@ -82,19 +86,20 @@ namespace Projeto_Muscle_Tec
 
                 if (resultado != null)
                 {
-                    return Convert.ToInt32(resultado); // Retorna o ID do treinador
+                    return Convert.ToInt32(resultado); // Retorna o ID do aluno
                 }
                 else
                 {
-                    throw new Exception("Usuário não encontrado ou não é aluno(a).");
+                    throw new Exception("Aluno não encontrado.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao obter ID do aluno(a): {ex.Message}");
+                MessageBox.Show($"Erro ao obter ID do aluno: {ex.Message}");
                 return -1; // Retorna um valor inválido para indicar erro
             }
         }
+
 
         ///////////////////////////////////////////////////////////////////////////////
 
@@ -119,8 +124,11 @@ namespace Projeto_Muscle_Tec
 
         private void LogarUsuario()
         {
+
             string email = textBox1.Text; // Campo para o e-mail
             string senha = textBox2.Text; // Campo para a senha
+            int idAluno;
+            int idTreinador;
 
             try
             {
@@ -140,19 +148,19 @@ namespace Projeto_Muscle_Tec
                     // Redireciona com base no tipo
                     if (tipoUsuario == "Aluno")
                     {
-                        MessageBox.Show("Bem-vindo, Aluno!");
-                        int idAluno = ObterIdAluno(email);
-                        Treinos Treinos = new Treinos(ConexaoDB.GetConexao(), idAluno);
-                        Treinos.Show();
-                        
+                        idAluno = ObterIdAluno(email);
+                        MessageBox.Show($"Bem-vindo, Aluno! {idAluno} ");
+                        TelaAluno TelaAluno = new TelaAluno(idAluno);
+                        TelaAluno.Show();
+
                     }
                     else if (tipoUsuario == "Instrutor")
                     {
                         MessageBox.Show("Bem-vindo, Instrutor!");
-                        int idTreinador = ObterIdTreinador(email);
+                        idTreinador = ObterIdTreinador(email);
                         Alunos Alunos = new Alunos(ConexaoDB.GetConexao(), idTreinador);
                         Alunos.Show();
-                        
+
                     }
                 }
                 else
@@ -164,27 +172,12 @@ namespace Projeto_Muscle_Tec
             {
                 MessageBox.Show($"Erro ao fazer login: {ex.Message}");
             }
-        
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-         
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             Cadastro cadastro = new Cadastro();
             cadastro.Show();
-
         }
 
         private void button1_Click(object sender, EventArgs e)

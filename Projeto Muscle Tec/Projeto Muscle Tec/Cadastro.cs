@@ -19,7 +19,8 @@ namespace Projeto_Muscle_Tec
             InitializeComponent();
             ConectarBanco();
 
-
+            label9.Visible = false;
+            comboBox1.Visible = false;
             label8.Visible = false;
             textBox5.Visible = false;
 
@@ -170,14 +171,11 @@ namespace Projeto_Muscle_Tec
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Verifica se o cadastro foi bem-sucedido
             if (CadastrarUsuario())
             {
-                // Cadastro bem-sucedido, abrir a tela de login
-                Login login = new Login();
-                login.Show();
+                Login Login = new Login();
+                Login.Show();
 
-                // Fechar o formulário atual
                 this.Close();
             }
             else

@@ -16,10 +16,11 @@ namespace Projeto_Muscle_Tec
         public Treinos(MySqlConnection conexao, int idAluno)
         {
             InitializeComponent();
-            CarregarTreinos();
+            CarregarTreinos(idAluno);
             AdicionarBotaoExercicios();
             dataGridView1.CellClick += dgvTreinos_CellClick;
         }
+
 
         public static class ConexaoDB
         {
@@ -43,7 +44,7 @@ namespace Projeto_Muscle_Tec
             }
         }
 
-        private void CarregarTreinos()
+        private void CarregarTreinos(int idAluno)
         {
             try
             {
@@ -53,13 +54,18 @@ namespace Projeto_Muscle_Tec
                 {
                     conexao.Open();
 
-                    // Query para buscar os treinos e o nome do aluno associado
-                    string query = @"SELECT t.idTreino, t.nomeTreino, t.descricao, u.nome AS Aluno
-                             FROM treino t
-                             INNER JOIN aluno a ON t.idAluno = a.idAluno
-                             INNER JOIN usuario u ON a.idUsuario = u.idUsuario";
+                    // Query para buscar os treinos apenas do aluno logado
+                    string query = @"
+                SELECT t.idTreino, t.nomeTreino, t.descricao, u.nome AS Aluno
+                FROM treino t
+                INNER JOIN aluno a ON t.idAluno = a.idAluno
+                INNER JOIN usuario u ON a.idUsuario = u.idUsuario
+                WHERE t.idAluno = @idAluno";
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao);
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@idAluno", idAluno);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
@@ -77,6 +83,7 @@ namespace Projeto_Muscle_Tec
                 MessageBox.Show($"Erro ao carregar os treinos: {ex.Message}");
             }
         }
+
 
 
         ///////////
