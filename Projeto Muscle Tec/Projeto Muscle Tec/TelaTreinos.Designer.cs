@@ -50,7 +50,7 @@ namespace Projeto_Muscle_Tec
             this.btnAdicionarTreino.Name = "btnAdicionarTreino";
             this.btnAdicionarTreino.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarTreino.TabIndex = 2;
-            this.btnAdicionarTreino.Text = "Adicionar";
+            this.btnAdicionarTreino.Text = "Criar Treino";
             this.btnAdicionarTreino.UseVisualStyleBackColor = true;
             this.btnAdicionarTreino.Click += new System.EventHandler(this.btnAdicionarTreino_Click_1);
             // 
@@ -64,7 +64,7 @@ namespace Projeto_Muscle_Tec
             // lblExercicioSelecionado
             // 
             this.lblExercicioSelecionado.AutoSize = true;
-            this.lblExercicioSelecionado.Location = new System.Drawing.Point(260, 12);
+            this.lblExercicioSelecionado.Location = new System.Drawing.Point(12, 12);
             this.lblExercicioSelecionado.Name = "lblExercicioSelecionado";
             this.lblExercicioSelecionado.Size = new System.Drawing.Size(0, 13);
             this.lblExercicioSelecionado.TabIndex = 4;
@@ -82,7 +82,7 @@ namespace Projeto_Muscle_Tec
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(267, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
@@ -137,6 +137,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.txtAltura.Location = new System.Drawing.Point(341, 109);
             this.txtAltura.Name = "txtAltura";
+            this.txtAltura.ReadOnly = true;
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 21;
             // 
@@ -144,6 +145,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.txtMeta.Location = new System.Drawing.Point(341, 83);
             this.txtMeta.Name = "txtMeta";
+            this.txtMeta.ReadOnly = true;
             this.txtMeta.Size = new System.Drawing.Size(100, 20);
             this.txtMeta.TabIndex = 20;
             // 
@@ -151,6 +153,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.txtPeso.Location = new System.Drawing.Point(341, 57);
             this.txtPeso.Name = "txtPeso";
+            this.txtPeso.ReadOnly = true;
             this.txtPeso.Size = new System.Drawing.Size(100, 20);
             this.txtPeso.TabIndex = 19;
             // 

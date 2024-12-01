@@ -10,12 +10,10 @@ namespace Projeto_Muscle_Tec
 {
     public partial class TelaTreinos : Form
     {
-        private int idAluno; // ID do aluno atual
+        private int idAluno;
         private int idTreinoSelecionado;
         private int idExercicioSelecionado;
-        // Exemplo de string de conexão
         private string conexaoBanco = "SERVER=localhost; DATABASE=muscletec; UID=root; PASSWORD=;";
-
 
         public TelaTreinos(int alunoId)
         {
@@ -26,7 +24,48 @@ namespace Projeto_Muscle_Tec
             this.treeViewTreinos.AfterSelect += new TreeViewEventHandler(this.treeViewTreinos_AfterSelect);
 
             ExibirNomeAluno();
+            CarregarPerfil();
             CarregarTreinosEExercicios(); // Carrega treinos e exercícios ao abrir a tela
+        }
+
+        private void CarregarPerfil()
+        {
+            try
+            {
+                // Query para pegar os dados do aluno e do usuário
+                string query = @"
+            SELECT u.nome, u.email, u.senha, u.cpf, 
+                   a.peso, a.altura, a.meta, a.sessoes
+            FROM aluno a
+            INNER JOIN usuario u ON a.idUsuario = u.idUsuario
+            WHERE a.idAluno = @idAluno";
+
+                using (MySqlConnection conexao = new MySqlConnection(conexaoBanco)) // Usa a string de conexão
+                {
+                    conexao.Open(); // Abre a conexão
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@idAluno", idAluno);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Carregar dados do aluno
+                                txtPeso.Text = reader["peso"].ToString();
+                                txtAltura.Text = reader["altura"].ToString();
+                                txtMeta.Text = reader["meta"].ToString();
+                                txtSessoes.Text = reader["sessoes"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar o perfil: {ex.Message}");
+            }
         }
 
         private void ExibirNomeAluno()
