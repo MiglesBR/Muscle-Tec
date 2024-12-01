@@ -8,11 +8,14 @@ namespace Projeto_Muscle_Tec
     public partial class Alunos : Form
     {
         private int idTreinador;
+        private int idAluno; // ID do aluno que vai ser editado
+        private MySqlConnection conexao;
 
         public Alunos(MySqlConnection conexao, int treinadorId)
         {
             InitializeComponent();
             idTreinador = treinadorId;
+            this.conexao = conexao;
 
             ConfigurarDataGridView();
             CarregarAlunos("");
@@ -69,16 +72,6 @@ namespace Projeto_Muscle_Tec
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
             dataGridView1.Columns.Add(colunaTreino);
-
-            // Coluna Informações
-            var colunaInformacoes = new DataGridViewButtonColumn
-            {
-                HeaderText = "Informações",
-                Text = "Informações",
-                UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            };
-            dataGridView1.Columns.Add(colunaInformacoes);
         }
 
 
@@ -142,11 +135,6 @@ namespace Projeto_Muscle_Tec
                         MessageBox.Show($"Abrindo treinos para o aluno ID: {idAluno}");
                         TelaTreinos telaTreinos = new TelaTreinos(idAluno);
                         telaTreinos.Show();
-                        break;
-
-                    case "Informações":
-                        // Abre a tela de informações
-                        MessageBox.Show($"Abrindo informações para o aluno ID: {idAluno}");
                         break;
 
                     default:

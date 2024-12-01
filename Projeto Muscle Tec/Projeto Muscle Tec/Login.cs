@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+//teste de versão
+
 namespace Projeto_Muscle_Tec
 {
     public partial class Login : Form
@@ -119,9 +121,6 @@ namespace Projeto_Muscle_Tec
             }
         }
 
-
-        //////////////////////////////////////////////////////////////////////////////////////
-
         private void LogarUsuario()
         {
 
@@ -158,14 +157,17 @@ namespace Projeto_Muscle_Tec
                     {
                         MessageBox.Show("Bem-vindo, Instrutor!");
                         idTreinador = ObterIdTreinador(email);
-                        Alunos Alunos = new Alunos(ConexaoDB.GetConexao(), idTreinador);
-                        Alunos.Show();
-
+                        TelaInstutor telaInstutor = new TelaInstutor(idTreinador);
+                        telaInstutor.Show();
                     }
+
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("E-mail ou senha inválidos.");
+                    textBox1.Text = "";
+                    textBox2.Text = "";
                 }
             }
             catch (Exception ex)
@@ -178,11 +180,27 @@ namespace Projeto_Muscle_Tec
         {
             Cadastro cadastro = new Cadastro();
             cadastro.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LogarUsuario();
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox2.PasswordChar = '\0'; // Remove o PasswordChar para mostrar o texto
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox2.PasswordChar = '*'; // Restaura o PasswordChar para ocultar o texto
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

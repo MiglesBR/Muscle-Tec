@@ -111,5 +111,15 @@ namespace Projeto_Muscle_Tec
         {
             this.Close(); // Apenas fecha a tela sem salvar
         }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtSenha.PasswordChar = '\0'; // Remove o PasswordChar para mostrar o texto
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtSenha.PasswordChar = '*'; // Restaura o PasswordChar para ocultar o texto
+        }
     }
 }

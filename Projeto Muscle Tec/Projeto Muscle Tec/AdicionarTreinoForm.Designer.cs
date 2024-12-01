@@ -40,6 +40,7 @@ namespace Projeto_Muscle_Tec
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblExercicioSelecionado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -50,7 +51,7 @@ namespace Projeto_Muscle_Tec
             // listBoxExercicios
             // 
             this.listBoxExercicios.FormattingEnabled = true;
-            this.listBoxExercicios.Location = new System.Drawing.Point(130, 110);
+            this.listBoxExercicios.Location = new System.Drawing.Point(116, 110);
             this.listBoxExercicios.Name = "listBoxExercicios";
             this.listBoxExercicios.Size = new System.Drawing.Size(120, 95);
             this.listBoxExercicios.TabIndex = 3;
@@ -58,7 +59,7 @@ namespace Projeto_Muscle_Tec
             // listBoxExerciciosAdicionados
             // 
             this.listBoxExerciciosAdicionados.FormattingEnabled = true;
-            this.listBoxExerciciosAdicionados.Location = new System.Drawing.Point(272, 110);
+            this.listBoxExerciciosAdicionados.Location = new System.Drawing.Point(257, 110);
             this.listBoxExerciciosAdicionados.Name = "listBoxExerciciosAdicionados";
             this.listBoxExerciciosAdicionados.Size = new System.Drawing.Size(120, 95);
             this.listBoxExerciciosAdicionados.TabIndex = 4;
@@ -95,14 +96,14 @@ namespace Projeto_Muscle_Tec
             // 
             // txtNomeTreino
             // 
-            this.txtNomeTreino.Location = new System.Drawing.Point(130, 59);
+            this.txtNomeTreino.Location = new System.Drawing.Point(186, 58);
             this.txtNomeTreino.Name = "txtNomeTreino";
             this.txtNomeTreino.Size = new System.Drawing.Size(100, 20);
             this.txtNomeTreino.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(130, 85);
+            this.txtDescricao.Location = new System.Drawing.Point(186, 84);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(100, 20);
             this.txtDescricao.TabIndex = 1;
@@ -111,7 +112,7 @@ namespace Projeto_Muscle_Tec
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 62);
+            this.label1.Location = new System.Drawing.Point(78, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 9;
@@ -121,17 +122,27 @@ namespace Projeto_Muscle_Tec
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 88);
+            this.label2.Location = new System.Drawing.Point(78, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Adicionar Descrição";
+            // 
+            // lblExercicioSelecionado
+            // 
+            this.lblExercicioSelecionado.AutoSize = true;
+            this.lblExercicioSelecionado.Location = new System.Drawing.Point(383, 110);
+            this.lblExercicioSelecionado.Name = "lblExercicioSelecionado";
+            this.lblExercicioSelecionado.Size = new System.Drawing.Size(105, 13);
+            this.lblExercicioSelecionado.TabIndex = 11;
+            this.lblExercicioSelecionado.Text = "Descrição exercício:";
             // 
             // AdicionarTreinoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblExercicioSelecionado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdicionarExercicio);
@@ -159,5 +170,6 @@ namespace Projeto_Muscle_Tec
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblExercicioSelecionado;
     }
 }

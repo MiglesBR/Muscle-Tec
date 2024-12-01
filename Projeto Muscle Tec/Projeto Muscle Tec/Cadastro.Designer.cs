@@ -39,23 +39,24 @@ namespace Projeto_Muscle_Tec
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(210, 192);
+            this.label5.Location = new System.Drawing.Point(368, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 47);
             this.label5.TabIndex = 15;
@@ -65,7 +66,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(187, 21);
+            this.label4.Location = new System.Drawing.Point(343, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(258, 45);
             this.label4.TabIndex = 14;
@@ -75,7 +76,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(200, 357);
+            this.label2.Location = new System.Drawing.Point(441, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 12;
@@ -84,16 +85,16 @@ namespace Projeto_Muscle_Tec
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(279, 354);
+            this.textBox2.Location = new System.Drawing.Point(372, 298);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 33);
+            this.textBox2.Size = new System.Drawing.Size(200, 33);
             this.textBox2.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 295);
+            this.label1.Location = new System.Drawing.Point(439, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 25);
             this.label1.TabIndex = 10;
@@ -102,16 +103,16 @@ namespace Projeto_Muscle_Tec
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(279, 292);
+            this.textBox1.Location = new System.Drawing.Point(372, 231);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 33);
+            this.textBox1.Size = new System.Drawing.Size(200, 33);
             this.textBox1.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(214, 483);
+            this.label3.Location = new System.Drawing.Point(443, 397);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 25);
             this.label3.TabIndex = 19;
@@ -120,16 +121,16 @@ namespace Projeto_Muscle_Tec
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(279, 413);
+            this.textBox3.Location = new System.Drawing.Point(372, 425);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 33);
+            this.textBox3.Size = new System.Drawing.Size(200, 33);
             this.textBox3.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(194, 421);
+            this.label6.Location = new System.Drawing.Point(438, 332);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 25);
             this.label6.TabIndex = 17;
@@ -138,27 +139,19 @@ namespace Projeto_Muscle_Tec
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(279, 475);
+            this.textBox4.Location = new System.Drawing.Point(372, 361);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 33);
+            this.textBox4.PasswordChar = '*';
+            this.textBox4.Size = new System.Drawing.Size(200, 33);
             this.textBox4.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(156, 631);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Baixar foto:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.textBox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseDown);
+            this.textBox4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseUp);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(268, 712);
+            this.radioButton1.Location = new System.Drawing.Point(419, 555);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(106, 20);
             this.radioButton1.TabIndex = 21;
@@ -171,7 +164,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(268, 739);
+            this.radioButton2.Location = new System.Drawing.Point(436, 529);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(72, 20);
             this.radioButton2.TabIndex = 22;
@@ -183,7 +176,7 @@ namespace Projeto_Muscle_Tec
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(234, 798);
+            this.button1.Location = new System.Drawing.Point(400, 581);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 45);
             this.button1.TabIndex = 24;
@@ -191,21 +184,11 @@ namespace Projeto_Muscle_Tec
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Projeto_Muscle_Tec.Properties.Resources.MuscleTEC1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(205, 545);
+            this.label8.Location = new System.Drawing.Point(443, 462);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 25);
             this.label8.TabIndex = 26;
@@ -213,17 +196,18 @@ namespace Projeto_Muscle_Tec
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(279, 546);
+            this.comboBox1.Location = new System.Drawing.Point(372, 489);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 21);
+            this.comboBox1.Size = new System.Drawing.Size(200, 33);
             this.comboBox1.TabIndex = 27;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(148, 542);
+            this.label9.Location = new System.Drawing.Point(415, 461);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 25);
             this.label9.TabIndex = 28;
@@ -232,25 +216,47 @@ namespace Projeto_Muscle_Tec
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(279, 542);
+            this.textBox5.Location = new System.Drawing.Point(372, 489);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 33);
+            this.textBox5.Size = new System.Drawing.Size(200, 33);
             this.textBox5.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Projeto_Muscle_Tec.Properties.Resources.MuscleTEC1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(372, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = global::Projeto_Muscle_Tec.Properties.Resources.ExibirSenha1;
+            this.pictureBox2.Location = new System.Drawing.Point(578, 358);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(619, 889);
+            this.ClientSize = new System.Drawing.Size(944, 661);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
@@ -262,9 +268,11 @@ namespace Projeto_Muscle_Tec
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Name = "Cadastro";
             this.Text = "Cadastro";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +291,6 @@ namespace Projeto_Muscle_Tec
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button1;
@@ -291,5 +298,6 @@ namespace Projeto_Muscle_Tec
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

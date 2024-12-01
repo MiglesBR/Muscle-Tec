@@ -69,6 +69,12 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="CriarExercicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarExercicio.Designer.cs">
+      <DependentUpon>CriarExercicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExerciciosAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaInstutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaInstutor.Designer.cs">
+      <DependentUpon>TelaInstutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaTreinos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarExercicio.resx">
+      <DependentUpon>CriarExercicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExerciciosAluno.resx">
       <DependentUpon>ExerciciosAluno.cs</DependentUpon>
@@ -147,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaInstutor.resx">
+      <DependentUpon>TelaInstutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaTreinos.resx">
       <DependentUpon>TelaTreinos.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Design sem nome %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExibirSenha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExibirSenha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

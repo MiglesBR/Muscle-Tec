@@ -103,6 +103,26 @@ namespace Projeto_Muscle_Tec.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExibirSenha {
+            get {
+                object obj = ResourceManager.GetObject("ExibirSenha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExibirSenha1 {
+            get {
+                object obj = ResourceManager.GetObject("ExibirSenha1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MUSCLE {
             get {
                 object obj = ResourceManager.GetObject("MUSCLE", resourceCulture);

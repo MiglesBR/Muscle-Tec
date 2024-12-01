@@ -84,3 +84,5 @@ C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaInicial.resources
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaAluno.resources
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Perfil.resources
+C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaInstutor.resources
+C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.CriarExercicio.resources

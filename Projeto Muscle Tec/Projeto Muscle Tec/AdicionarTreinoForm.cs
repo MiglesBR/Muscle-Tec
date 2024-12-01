@@ -20,11 +20,14 @@ namespace Projeto_Muscle_Tec
             conexao = Alunos.ConexaoDB.GetConexao(); // Usar a conexão única
 
             CarregarExerciciosDisponiveis();
+
+            // Associar o evento SelectedIndexChanged do ListBox
+            listBoxExercicios.SelectedIndexChanged += ListBoxExercicios_SelectedIndexChanged;
         }
 
         private void CarregarExerciciosDisponiveis()
         {
-            string query = "SELECT idExercicio, nomeExercicio FROM exercicios";
+            string query = "SELECT idExercicio, nomeExercicio, descricao FROM exercicios";
 
             try
             {
@@ -40,6 +43,18 @@ namespace Projeto_Muscle_Tec
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar exercícios: {ex.Message}");
+            }
+        }
+
+        private void ListBoxExercicios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxExercicios.SelectedItem != null)
+            {
+                // Capturar o item selecionado
+                DataRowView itemSelecionado = (DataRowView)listBoxExercicios.SelectedItem;
+
+                // Exibir a descrição na lblExercicioSelecionado
+                lblExercicioSelecionado.Text = $"Descrição exercício: {itemSelecionado["descricao"]}";
             }
         }
 

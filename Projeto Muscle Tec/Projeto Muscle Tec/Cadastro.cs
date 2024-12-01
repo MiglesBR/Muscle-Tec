@@ -68,8 +68,8 @@ namespace Projeto_Muscle_Tec
         {
             string nome = textBox1.Text;
             string email = textBox2.Text;
-            string senha = textBox3.Text;
-            string cpf = textBox4.Text;
+            string senha = textBox4.Text;
+            string cpf = textBox3.Text;
 
             string tipoUsuario = radioButton1.Checked ? "Instrutor" : "Aluno";
 
@@ -192,6 +192,26 @@ namespace Projeto_Muscle_Tec
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox4.PasswordChar = '\0'; // Remove o PasswordChar para mostrar o texto
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox4.PasswordChar = '*'; // Restaura o PasswordChar para ocultar o texto
+        }
+
+        private void textBox4_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void textBox4_MouseUp(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

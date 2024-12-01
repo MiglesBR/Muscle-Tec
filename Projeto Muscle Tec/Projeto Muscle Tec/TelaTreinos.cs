@@ -208,14 +208,57 @@ namespace Projeto_Muscle_Tec
                 idTreinoSelecionado = idTreino; // Atualiza a variável global
 
                 lblExercicioSelecionado.Text = $"Treino {idTreino} - Exercício: {selectedNode.Text}";
+
+                // Busca e exibe a descrição do exercício
+                ExibirDescricaoExercicio(idExercicio);
             }
             else // Nó de treino
             {
                 int idTreino = Convert.ToInt32(selectedNode.Tag); // ID do treino (nó selecionado)
 
                 lblExercicioSelecionado.Text = $"Treino selecionado: {idTreino}";
+                lblDescricaoExercicio.Text = ""; // Limpa a descrição ao selecionar um treino
             }
         }
+
+        /// <summary>
+        /// Busca a descrição do exercício no banco de dados e exibe na label.
+        /// </summary>
+        /// <param name="idExercicio">ID do exercício selecionado.</param>
+        private void ExibirDescricaoExercicio(int idExercicio)
+        {
+            string query = "SELECT descricao FROM exercicios WHERE idExercicio = @idExercicio";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(conexaoBanco))
+                {
+                    connection.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@idExercicio", idExercicio);
+
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            lblDescricaoExercicio.Text = $"Descrição: {resultado.ToString()}";
+                        }
+                        else
+                        {
+                            lblDescricaoExercicio.Text = "Descrição: Não encontrada.";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar descrição do exercício: {ex.Message}");
+                lblDescricaoExercicio.Text = "Erro ao carregar descrição.";
+            }
+        }
+
 
         private void AtualizarTreeView() //Arrumar problema referente ao idAluno
         {
@@ -361,6 +404,11 @@ namespace Projeto_Muscle_Tec
             AdicionarTreinoForm formAdicionar = new AdicionarTreinoForm(idAluno);
             formAdicionar.ShowDialog();
             CarregarTreinosEExercicios(); // Recarrega os treinos após adicionar
+        }
+
+        private void TelaTreinos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
