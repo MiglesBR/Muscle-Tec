@@ -154,7 +154,7 @@ namespace Projeto_Muscle_Tec
                 lblExercicioSelecionado.Text = $"Treino selecionado: {idTreino}";
             }
         }
-
+        //teste de versão
         private void AtualizarTreeView() //Arrumar problema referente ao idAluno
         {
             // Recarrega os treinos e exercícios do banco de dados
