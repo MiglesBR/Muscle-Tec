@@ -1,8 +1,3 @@
-# Muscle-Tec
-Aqui está um exemplo de um **README.md** detalhado e profissional, direcionado ao seu professor. 
-
----
-
 # **Muscle TEC - Gerenciamento de Treinos**
 
 ## **Descrição do Projeto**  
