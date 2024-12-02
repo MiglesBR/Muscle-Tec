@@ -50,90 +50,112 @@ namespace Projeto_Muscle_Tec
             // 
             // listBoxExercicios
             // 
+            this.listBoxExercicios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxExercicios.FormattingEnabled = true;
-            this.listBoxExercicios.Location = new System.Drawing.Point(116, 110);
+            this.listBoxExercicios.ItemHeight = 21;
+            this.listBoxExercicios.Location = new System.Drawing.Point(256, 111);
             this.listBoxExercicios.Name = "listBoxExercicios";
-            this.listBoxExercicios.Size = new System.Drawing.Size(120, 95);
+            this.listBoxExercicios.Size = new System.Drawing.Size(213, 109);
             this.listBoxExercicios.TabIndex = 3;
             // 
             // listBoxExerciciosAdicionados
             // 
+            this.listBoxExerciciosAdicionados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxExerciciosAdicionados.FormattingEnabled = true;
-            this.listBoxExerciciosAdicionados.Location = new System.Drawing.Point(257, 110);
+            this.listBoxExerciciosAdicionados.ItemHeight = 21;
+            this.listBoxExerciciosAdicionados.Location = new System.Drawing.Point(475, 111);
             this.listBoxExerciciosAdicionados.Name = "listBoxExerciciosAdicionados";
-            this.listBoxExerciciosAdicionados.Size = new System.Drawing.Size(120, 95);
+            this.listBoxExerciciosAdicionados.Size = new System.Drawing.Size(213, 109);
             this.listBoxExerciciosAdicionados.TabIndex = 4;
+            this.listBoxExerciciosAdicionados.SelectedIndexChanged += new System.EventHandler(this.listBoxExerciciosAdicionados_SelectedIndexChanged);
             // 
             // btnRemoverExercicio
             // 
-            this.btnRemoverExercicio.Location = new System.Drawing.Point(211, 211);
+            this.btnRemoverExercicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btnRemoverExercicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoverExercicio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoverExercicio.ForeColor = System.Drawing.Color.White;
+            this.btnRemoverExercicio.Location = new System.Drawing.Point(416, 262);
             this.btnRemoverExercicio.Name = "btnRemoverExercicio";
-            this.btnRemoverExercicio.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoverExercicio.Size = new System.Drawing.Size(112, 40);
             this.btnRemoverExercicio.TabIndex = 6;
             this.btnRemoverExercicio.Text = "Remover";
-            this.btnRemoverExercicio.UseVisualStyleBackColor = true;
+            this.btnRemoverExercicio.UseVisualStyleBackColor = false;
             this.btnRemoverExercicio.Click += new System.EventHandler(this.btnRemoverExercicio_Click);
             // 
             // btnSalvarTreino
             // 
-            this.btnSalvarTreino.Location = new System.Drawing.Point(292, 211);
+            this.btnSalvarTreino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btnSalvarTreino.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvarTreino.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarTreino.ForeColor = System.Drawing.Color.White;
+            this.btnSalvarTreino.Location = new System.Drawing.Point(534, 262);
             this.btnSalvarTreino.Name = "btnSalvarTreino";
-            this.btnSalvarTreino.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarTreino.Size = new System.Drawing.Size(112, 40);
             this.btnSalvarTreino.TabIndex = 7;
             this.btnSalvarTreino.Text = "Salvar";
-            this.btnSalvarTreino.UseVisualStyleBackColor = true;
+            this.btnSalvarTreino.UseVisualStyleBackColor = false;
             this.btnSalvarTreino.Click += new System.EventHandler(this.btnSalvarTreino_Click);
             // 
             // btnAdicionarExercicio
             // 
-            this.btnAdicionarExercicio.Location = new System.Drawing.Point(130, 211);
+            this.btnAdicionarExercicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btnAdicionarExercicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdicionarExercicio.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarExercicio.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarExercicio.Location = new System.Drawing.Point(298, 262);
             this.btnAdicionarExercicio.Name = "btnAdicionarExercicio";
-            this.btnAdicionarExercicio.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarExercicio.Size = new System.Drawing.Size(112, 40);
             this.btnAdicionarExercicio.TabIndex = 8;
             this.btnAdicionarExercicio.Text = "Adicionar";
-            this.btnAdicionarExercicio.UseVisualStyleBackColor = true;
+            this.btnAdicionarExercicio.UseVisualStyleBackColor = false;
             this.btnAdicionarExercicio.Click += new System.EventHandler(this.btnAdicionarExercicio_Click);
             // 
             // txtNomeTreino
             // 
-            this.txtNomeTreino.Location = new System.Drawing.Point(186, 58);
+            this.txtNomeTreino.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeTreino.Location = new System.Drawing.Point(311, 72);
             this.txtNomeTreino.Name = "txtNomeTreino";
-            this.txtNomeTreino.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeTreino.Size = new System.Drawing.Size(322, 33);
             this.txtNomeTreino.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(186, 84);
+            this.txtDescricao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(311, 33);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(100, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(322, 33);
             this.txtDescricao.TabIndex = 1;
             this.txtDescricao.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 61);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(172, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(133, 25);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Criar Treino";
+            this.label1.Text = "Nome Treino:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 87);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(112, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.Size = new System.Drawing.Size(193, 25);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Adicionar Descrição";
+            this.label2.Text = "Adicionar Descrição:";
             // 
             // lblExercicioSelecionado
             // 
             this.lblExercicioSelecionado.AutoSize = true;
-            this.lblExercicioSelecionado.Location = new System.Drawing.Point(383, 110);
+            this.lblExercicioSelecionado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExercicioSelecionado.Location = new System.Drawing.Point(112, 323);
             this.lblExercicioSelecionado.Name = "lblExercicioSelecionado";
-            this.lblExercicioSelecionado.Size = new System.Drawing.Size(105, 13);
+            this.lblExercicioSelecionado.Size = new System.Drawing.Size(186, 25);
             this.lblExercicioSelecionado.TabIndex = 11;
             this.lblExercicioSelecionado.Text = "Descrição exercício:";
             // 
@@ -141,7 +163,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(944, 501);
             this.Controls.Add(this.lblExercicioSelecionado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

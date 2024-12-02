@@ -66,7 +66,7 @@ namespace Projeto_Muscle_Tec
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(361, 121);
+            this.button1.Location = new System.Drawing.Point(361, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 33);
             this.button1.TabIndex = 10;
@@ -78,7 +78,7 @@ namespace Projeto_Muscle_Tec
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 92);
+            this.label3.Location = new System.Drawing.Point(30, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 25);
             this.label3.TabIndex = 8;
@@ -87,7 +87,7 @@ namespace Projeto_Muscle_Tec
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(33, 121);
+            this.textBox1.Location = new System.Drawing.Point(33, 117);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(322, 33);
             this.textBox1.TabIndex = 7;

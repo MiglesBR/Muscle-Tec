@@ -60,6 +60,8 @@ namespace Projeto_Muscle_Tec
 
         private void btnAdicionarExercicio_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"idAluno: {idAluno}");
+
             if (listBoxExercicios.SelectedItem != null)
             {
                 DataRowView itemSelecionado = (DataRowView)listBoxExercicios.SelectedItem;
@@ -145,6 +147,11 @@ namespace Projeto_Muscle_Tec
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxExerciciosAdicionados_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

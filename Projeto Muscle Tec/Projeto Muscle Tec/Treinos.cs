@@ -21,25 +21,16 @@ namespace Projeto_Muscle_Tec
 
         public static class ConexaoDB
         {
-            private static MySqlConnection conexao;
+            private static string stringConexao = "SERVER=localhost; DATABASE=muscletec; UID=root; PASSWORD=;";
 
             public static MySqlConnection GetConexao()
             {
-                if (conexao == null)
-                {
-                    string servidor = "localhost";
-                    string banco = "muscletec";
-                    string usuario = "root";
-                    string senha = "";
-
-                    string stringConexao = $"SERVER={servidor}; DATABASE={banco}; UID={usuario}; PASSWORD={senha};";
-                    conexao = new MySqlConnection(stringConexao);
-                    conexao.Open();
-                }
-
+                var conexao = new MySqlConnection(stringConexao);
+                conexao.Open();
                 return conexao;
             }
         }
+
 
         private void CarregarTreinos(int idAluno)
         {
@@ -113,22 +104,21 @@ namespace Projeto_Muscle_Tec
         {
             try
             {
-                string query = "UPDATE aluno SET sessoes = sessoes + 1 WHERE idAluno = @idAluno";
-
-                using (MySqlConnection conexao = ConexaoDB.GetConexao())
+                using (var conexao = ConexaoDB.GetConexao())
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, conexao);
-                    cmd.Parameters.AddWithValue("@idAluno", idAluno);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    using (var cmd = new MySqlCommand("UPDATE aluno SET sessoes = sessoes + 1 WHERE idAluno = @idAluno", conexao))
                     {
-                        MessageBox.Show("Sessão realizada com sucesso!");
-                    }
-                    else
-                    {
+                        cmd.Parameters.AddWithValue("@idAluno", idAluno);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Sessão realizada com sucesso!");
+                        }
+                        else
+                        {
                         MessageBox.Show("Erro ao atualizar a sessão. Tente novamente.");
+                        }
                     }
                 }
             }

@@ -3,24 +3,26 @@ using System.Windows.Forms;
 
 namespace Projeto_Muscle_Tec
 {
+
+    //controle de versão
     public partial class TelaInicial : Form
     {
-        private Timer timer;
-
         public TelaInicial()
         {
             InitializeComponent();
 
-            timer = new Timer();
-            timer.Interval = 3000; 
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();  
+            // Configura o evento de clique para todo o formulário
+            this.MouseDown += TelaInicial_Click;
+
+            // Adiciona o evento de clique a todos os controles do formulário
+            foreach (Control control in this.Controls)
+            {
+                control.MouseDown += TelaInicial_Click;
+            }
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void TelaInicial_Click(object sender, EventArgs e)
         {
-            timer.Stop();
-
             AbrirProximaTela();
         }
 
@@ -31,9 +33,11 @@ namespace Projeto_Muscle_Tec
             Login Login = new Login();
             Login.Show();
         }
+    
+
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            // Deixe este método vazio ou remova-o, se não for necessário
         }
     }
 }
