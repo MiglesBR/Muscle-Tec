@@ -104,9 +104,5 @@ O projeto é dividido em telas e classes de gerenciamento:
 ---
 
 ## **Contato**
-Desenvolvido por: **[Seu Nome]**  
-Para dúvidas ou sugestões, envie um email para **[seu-email@example.com]**. 
-
---- 
-
-Se precisar de ajustes ou uma abordagem mais direta, é só avisar!
+Desenvolvido por: **[Miguel Maia, Caio Fábio, Kimberly Moura]**  
+Para dúvidas ou sugestões, envie um email para **[miguelmartinsmaia48@gmail.com]**. 
