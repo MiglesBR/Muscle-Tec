@@ -25,6 +25,34 @@ namespace Projeto_Muscle_Tec
             listBoxExercicios.SelectedIndexChanged += ListBoxExercicios_SelectedIndexChanged;
         }
 
+        private bool VerificarAlunoExistente(int idAluno)
+        {
+            try
+            {
+                if (conexao.State != ConnectionState.Open)
+                {
+                    conexao.Open();
+                }
+
+                string query = "SELECT COUNT(*) FROM aluno WHERE idAluno = @idAluno";
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@idAluno", idAluno);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                MessageBox.Show($"Aluno encontrado? {(count > 0 ? "Sim" : "Não")} (idAluno: {idAluno})");
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao verificar aluno: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
+
         private void CarregarExerciciosDisponiveis()
         {
             string query = "SELECT idExercicio, nomeExercicio, descricao FROM exercicios";
@@ -60,6 +88,8 @@ namespace Projeto_Muscle_Tec
 
         private void btnAdicionarExercicio_Click(object sender, EventArgs e)
         {
+            MessageBox.Show($"ID do aluno no sistema: {idAluno}");
+
             Console.WriteLine($"idAluno: {idAluno}");
 
             if (listBoxExercicios.SelectedItem != null)
@@ -88,6 +118,14 @@ namespace Projeto_Muscle_Tec
 
         private void btnSalvarTreino_Click(object sender, EventArgs e)
         {
+            MessageBox.Show($"ID do aluno no sistema: {idAluno}");
+
+            if (!VerificarAlunoExistente(idAluno))
+            {
+                MessageBox.Show("O aluno não existe. Por favor, cadastre o aluno antes de criar o treino.");
+                return;
+            }
+
             string nomeTreino = txtNomeTreino.Text.Trim();
             string descricao = txtDescricao.Text.Trim();
 

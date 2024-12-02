@@ -86,3 +86,26 @@ C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Perfil.resources
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaInstutor.resources
 C:\Users\Sky\OneDrive\Área de Trabalho\MuscleTEC\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.CriarExercicio.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\bin\Debug\Projeto Muscle Tec.exe.config
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\bin\Debug\Projeto Muscle Tec.exe
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\bin\Debug\Projeto Muscle Tec.pdb
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\bin\Debug\Google.Protobuf.dll
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.csproj.AssemblyReference.cache
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.AdicionarTreinoForm.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Alunos.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Cadastro.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.CriarExercicio.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.ExerciciosAluno.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Login.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Perfil.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaAluno.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaInicial.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Properties.Resources.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaInstutor.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.TelaTreinos.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto_Muscle_Tec.Treinos.resources
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.csproj.GenerateResource.cache
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.csproj.CoreCompileInputs.cache
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.csproj.CopyComplete
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.exe
+D:\internet.info\Source\Repos\Muscle-Tec\Projeto Muscle Tec\Projeto Muscle Tec\obj\Debug\Projeto Muscle Tec.pdb
