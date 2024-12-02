@@ -18,17 +18,15 @@ Muscle TEC é um sistema desenvolvido para gerenciar treinos e atividades físic
 - Visualizar **treinos atribuídos** e exercícios relacionados.
 - Acompanhar as sessões realizadas com incremento automático por treino concluído.
 - Atualizar perfil (peso, altura, metas, etc.).
-- Visualizar estatísticas como número total de sessões realizadas.
 
 ### **3. Funcionalidades do Instrutor**
 - Criar e gerenciar **exercícios** para alunos.
 - Criar e gerenciar **treinos**, vinculando exercícios específicos.
 - Gerenciar os alunos atribuídos ao instrutor, com informações detalhadas de cada aluno.
-- Atualizar informações dos alunos, como metas ou treinos atribuídos.
 
 ### **4. Gerenciamento de Dados**
 - O sistema utiliza o **MySQL** para armazenamento de dados:
-  - Tabelas incluem **usuários**, **alunos**, **instrutores**, **exercícios**, **treinos**, entre outros.
+  - Tabelas incluem **usuários**, **alunos**, **instrutores**, **exercícios**, **treinos**, **treino_exercicio**
   - Relacionamentos bem definidos para garantir integridade referencial.
 
 ---
